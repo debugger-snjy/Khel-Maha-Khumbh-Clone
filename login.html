@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sports Authority of Gujarat</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Boostrap Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <div class="bannerSection w-100">
+        <h1>Login Player</h1>
+        <h6 class="my-4">Home > Login</h6>
+    </div>
+
+
+    <div class="my-4" style="margin: 0px 20%;">
+        <!-- Alert Messages -->
+        <div class="alert alert-success alert-dismissible fade show" id="successalertBox" role="alert">
+            <strong id="successMsg"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" id="dangeralertBox" role="alert">
+            <strong id="dangerMsg"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div class="bg-white loginCard">
+
+        <div class="row">
+            <div class="col-6 loginForm">
+                <form action="./Database/loginuser.php" method="post" id="loginForm">
+                    <div class="d-flex flex-column">
+                        <div class="mx-4 my-2">
+                            <label for="playerEmailID" class="form-label fw-medium">Player Email ID<span
+                                    class="asterisk">*</span></label>
+                            <input type="email" class="form-control" id="playerEmailID" name="playerEmailID">
+                        </div>
+                        <div class="mx-4 my-2">
+                            <label for="playerPassword" class="form-label fw-medium">Player Password<span
+                                    class="asterisk">*</span></label>
+                            <input type="password" class="form-control" id="playerPassword" name="playerPassword">
+                        </div>
+                        <div class="mx-4 my-2">
+                            <div class="row g-3 align-items-end mt-1">
+                                <div class="col-8">
+                                    <label for="userCaptcha" class="form-label fw-medium">Captcha <span
+                                            class="asterisk">*</span></label>
+                                    <input type="text" class="form-control d-inline-block" id="userCaptcha"
+                                        name="userCaptcha">
+                                </div>
+                                <div class="col-4">
+                                    <img src="./Images/captcha.png" alt="Your Captcha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-4 my-4">
+
+                            <div class="row g-3 align-items-center mt-1">
+                                <div class="col-8">
+                                    <input type="submit" id="submitForm" name="submitForm"
+                                        class="btn KMKLoginButton text-white fw-bold" value="Login">
+                                </div>
+                                <div class="col-4">
+                                    <p><a href="" class="forgetPassLink">Forget Password</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6 loginBackground p-0">
+                <div
+                    class="loginMessage h-100 p-0 m-0 text-white d-flex flex-column align-items-center justify-content-center">
+                    <h2>Login</h2>
+                    <p>Enter your personal details and start journey with us . . </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery Script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- jQuery Validation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- jQuery Cookie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <!-- My Script -->
+    <script src="./JS/script.js"></script>
+
+</body>
+
+</html>

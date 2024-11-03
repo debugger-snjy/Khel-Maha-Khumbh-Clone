@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sports Authority of Gujarat</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="bg-white mainCard my-4">
+        
+        <div class="d-flex justify-content-between mb-3 align-items-center">
+            <h1><strong>Registration Form</strong></h1>
+            <a class="btn KMKButton text-white fw-bold px-4" href="login.html">Login Here !</a>
+        </div>
+
+        <div class="instructions">
+
+            <h4><strong>Instructions For Resgistration</strong></h4>
+
+            <ol class="mt-4">
+                <li class="my-2">For Under-9,Under-11, Under-14, Under-17 competitions, Registration through School is
+                    mandatory.</li>
+                <li class="my-2">Open Age Group (Born 31/12/2006 And Before)</li>
+                <li class="my-2">While registering to participate in the second game, registration must be done with the
+                    first registration ID (first game of KMK Id), the registration of the second game will not be
+                    considered valid.</li>
+            </ol>
+
+        </div>
+
+        <div class="text-end mt-2 fst-italic">Note <span class="asterisk">*</span> Fields are compulsory
+        </div>
+
+        <!-- Alert Messages -->
+        <div class="alert alert-success alert-dismissible fade show" id="successalertBox" role="alert">
+            <strong id="successMsg"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" id="dangeralertBox" role="alert">
+            <strong id="dangerMsg"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <form action="searching.php" method="post">
+            <!-- First Section : Fetch Data From KMK ID -->
+            <h4 class="subHeading"><strong>Fetch Data From KMK ID</strong></h4>
+            <hr>
+            <div class="row g-3 align-items-end">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="khelMahaKhumbSeason" class="form-label fw-medium">KhelMahaKumbh</label>
+                    <select id="khelMahaKhumbSeason" name="khelMahaKhumbSeason" class="form-select">
+                        <option value="1">1st KhelMahaKhumnb</option>
+                        <option value="2">2nd KhelMahaKhumnb</option>
+                        <option value="3">3rd KhelMahaKhumnb</option>
+                        <option value="4">4th KhelMahaKhumnb</option>
+                        <option value="5">5th KhelMahaKhumnb</option>
+                        <option value="6">6th KhelMahaKhumnb</option>
+                        <option value="7">7th KhelMahaKhumnb</option>
+                        <option value="8">8th KhelMahaKhumnb</option>
+                        <option value="9">9th KhelMahaKhumnb</option>
+                        <option value="10">10th KhelMahaKhumnb</option>
+                        <option value="11" selected>11th KhelMahaKhumnb</option>
+                    </select>
+
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="khelMahaKhumbID" class="form-label fw-medium">KMK ID</label>
+                    <input type="text" class="form-control" id="khelMahaKhumbID" name="khelMahaKhumbID"
+                        placeholder="KMK0000000">
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn KMKButton text-white fw-bold px-4">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <form action="Database/register.php" method="post" enctype="multipart/form-data" id="registerForm">
+
+            <!-- Second Section : Player Details -->
+            <h4 class="subHeading"><strong>Player Details</strong></h4>
+            <hr>
+            <div class="row g-3 align-items-end mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userFirstName" class="form-label fw-medium">First Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userFirstName" name="userFirstName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userFatherHusbandName" class="form-label fw-medium">Father/Husband Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userFatherHusbandName" name="userFatherHusbandName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userLastName" class="form-label fw-medium">Last Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userLastName" name="userLastName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userAgeGroup" class="form-label fw-medium">Age Group <span
+                            class="asterisk">*</span></label>
+                    <select id="userAgeGroup" name="userAgeGroup" class="form-select">
+                        <option value="" selected>Select</option>
+                        <option value="1-7 Yrs">1-7 Years</option>
+                        <option value="8-10 Yrs">8-10 Years</option>
+                        <option value="11-13 Yrs">11-13 Years</option>
+                        <option value="14-16 Yrs">14-16 Years</option>
+                        <option value="17-19 Yrs">17-19 Years</option>
+                        <option value="20-22 Yrs">20-22 Years</option>
+                        <option value="23-25 Yrs">23-25 Years</option>
+                        <option value="26-28 Yrs">26-28 Years</option>
+                        <option value="29-31 Yrs">29-31 Years</option>
+                        <option value="32-34 Yrs">32-34 Years</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 align-items-end mt-1">
+
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="" class="form-label fw-medium">Select Your Gender <span
+                            class="asterisk">*</span></label>
+                    <div class="d-flex">
+                        <div class="form-check d-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                            <label class="form-check-label" for="male">
+                                Male
+                            </label>
+                        </div>
+                        <span class="mx-2"> </span>
+                        <div class="form-check d-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userdateOfBirth" class="form-label fw-medium">Date of Birth <span
+                            class="asterisk">*</span></label>
+                    <input type="date" class="form-control" id="userdateOfBirth" name="userdateOfBirth">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userSportsName" class="form-label fw-medium">Sports Name <span
+                            class="asterisk">*</span></label>
+                    <select id="userSportsName" name="userSportsName" class="form-select">
+                        <option value="" selected>Select</option>
+                        <option value="Cricket">Cricket</option>
+                        <option value="Hockey">Hockey</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Football">Football</option>
+                        <option value="Tennies">Tennies</option>
+                        <option value="VolleyBall">VolleyBall</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userSubSportsName" class="form-label fw-medium">Sub Sports Name <span
+                            class="asterisk">*</span></label>
+                    <select id="userSubSportsName" name="userSubSportsName" class="form-select">
+                        <option value="" selected>Select Sub Events</option>
+                        <option value="Cricket">Cricket</option>
+                        <option value="Hockey">Hockey</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Football">Football</option>
+                        <option value="Tennies">Tennies</option>
+                        <option value="VolleyBall">VolleyBall</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 align-items-start mt-1">
+                <!-- Removing this as of no use till now ! -->
+                <!-- <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label class="form-label fw-medium" for="">
+                        Tick the checkbox to select the another game
+                    </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="anotherGame" id="anotherGame"
+                            name="anotherGame">
+                    </div>
+                </div> -->
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userMobileNumber" class="form-label fw-medium">Mobile Number <span
+                            class="asterisk">*</span></label>
+                    <input type="tel" class="form-control" id="userMobileNumber" name="userMobileNumber" maxlength="10">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userEmail" class="form-label fw-medium">Email ID <span class="asterisk">*</span></label>
+                    <input type="email" class="form-control" id="userEmail" name="userEmail">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userPassword" class="form-label fw-medium">Password <span class="asterisk">*</span></label>
+                    <input type="password" class="form-control" id="userPassword" name="userPassword">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userWeight" class="form-label fw-medium">Weight(Kg) <span
+                            class="asterisk">*</span></label>
+                    <input type="number" class="form-control" id="userWeight" name="userWeight">
+                </div>
+            </div>
+            <div class="row g-3 align-items-start mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userHeight" class="form-label fw-medium">Height (cm) <span
+                            class="asterisk">*</span></label>
+                    <input type="number" class="form-control" id="userHeight" name="userHeight">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userDistrict" class="form-label fw-medium">District <span
+                            class="asterisk">*</span></label>
+                    <select id="userDistrict" name="userDistrict" class="form-select">
+                        <option value="" selected>Select District</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userTaluka" class="form-label fw-medium">Taluka/Zone <span
+                            class="asterisk">*</span></label>
+                    <select id="userTaluka" name="userTaluka" class="form-select">
+                        <option value="" selected>Select Taluka/Zone </option>
+                        <option value="Ahmedabad City">Ahmedabad City</option>
+                        <option value="Daskroi">Daskroi</option>
+                        <option value="Dholka">Dholka</option>
+                        <option value="Sanand">Sanand</option>
+                        <option value="Bavla">Bavla</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userVillage" class="form-label fw-medium">Village/Ward <span
+                            class="asterisk">*</span></label>
+                    <select id="userVillage" name="userVillage" class="form-select">
+                        <option value="" selected>Select Village/Ward </option>
+                        <option value="Chandkheda">Chandkheda</option>
+                        <option value="Sarkhej">Sarkhej</option>
+                        <option value="Vasna">Vasna</option>
+                        <option value="Vastral">Vastral</option>
+                        <option value="Chandlodia">Chandlodia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 align-items-start mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userCaste" class="form-label fw-medium">Caste <span class="asterisk">*</span></label>
+                    <select id="userCaste" name="userCaste" class="form-select">
+                        <option value="Select" selected>Select</option>
+                        <option value="General">General</option>
+                        <option value="OBC">OBC</option>
+                        <option value="ST">ST</option>
+                        <option value="SC">SC</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userProfileImage" class="form-label fw-medium">Your Profile Image<span
+                            class="asterisk">*</span></label>
+                    <input type="file" class="form-control" id="userProfileImage" name="userProfileImage">
+                </div>
+            </div>
+
+            <!-- Third Section : Guardian Details -->
+            <h4 class="subHeading"><strong>Guardian Details</strong></h4>
+            <hr>
+            <div class="row g-3 align-items-end mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userGuardianFirstName" class="form-label fw-medium">First Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userGuardianFirstName" name="userGuardianFirstName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userGuardianLastName" class="form-label fw-medium">Last Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userGuardianLastName" name="userGuardianLastName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userGuardianNumber" class="form-label fw-medium">Mobile Number <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userGuardianNumber" name="userGuardianNumber">
+                </div>
+            </div>
+
+            <!-- Fourth Section : Other Details -->
+            <h4 class="subHeading"><strong>Other Details</strong></h4>
+            <hr>
+            <div class="row g-3 align-items-end mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userCoachName" class="form-label fw-medium">Coach Name <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control" id="userCoachName" name="userCoachName">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userCoachNumber" class="form-label fw-medium">Coach Mobile Number <span
+                            class="asterisk">*</spa></label>
+                    <input type="text" class="form-control" id="userCoachNumber" name="userCoachNumber">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userCoachHomeAddress" class="form-label fw-medium">Coach Home Address <span
+                            class="asterisk">*</span></label>
+                    <textarea class="form-control" id="userCoachHomeAddress" name="userCoachHomeAddress"
+                        rows="1"></textarea>
+                </div>
+            </div>
+            <div class="row g-3 align-items-end mt-1">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label for="userCaptcha" class="form-label fw-medium">Captcha <span
+                            class="asterisk">*</span></label>
+                    <input type="text" class="form-control d-inline-block" id="userCaptcha" name="userCaptcha">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <img src="./Images/captcha.png" alt="Your Captcha">
+                </div>
+            </div>
+
+            <div>
+
+                <div class="noteForLoginIDAndPassword mt-4">Note - You will receive the login ID and password
+                    information of
+                    the player in the above e-mail.</div>
+
+                <ol class="confirmations my-3">
+
+                    <li>If any kind of physical injury happens during the competition, it will be the responsibility of
+                        me and my guardian. The organizer will have no responsibility </li>
+                    <li>I will register from one place from the entire state, otherwise my registration will be
+                        canceled.</li>
+                    <li>Therefore, I ________________________ guarantee that if I am selected as the winner in
+                        Khelmahakumbh, I will be present at the competition venue at my own expense and risk before the
+                        time indicated. 4. Mark the event on the back page for each individual sub-event game.</li>
+                    <li>Form-A for individual sport and Form-A and Form B for joint sport are mandatory to be filled.
+                    </li>
+                    <li>Form-B must be filled for Table Tennis, Lawn Tennis, Badminton Doubles and Mixed Doubles.</li>
+                </ol>
+
+                <div class="AcceptanceCheck">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="acceptTandC" id="acceptTandC">
+                        <label class="form-label fw-medium" for="acceptTandC">
+                            I Accept above all the terms and conditions
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="SubmitButtonSection text-end">
+                <input type="submit" id="submitRegisterForm" name="submitRegisterForm" class="btn KMKButton text-white fw-bold px-4 disabled"
+                    value="Submit Form">
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery Script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- jQuery Validation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- jQuery Cookie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <!-- My Script -->
+    <script src="JS/script.js"></script>
+
+</body>
+
+</html>
+
